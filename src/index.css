@@ -33,11 +33,8 @@ h5,
 h6 {
   font-family: "Geist", sans-serif;
 }
-/* Allow native scroll on mobile; overflow is locked on desktop via GSAP */
-@media screen and (min-width: 1025px) {
-  body {
-    overflow: hidden;
-  }
+body {
+  overflow: hidden;
 }
 a {
   color: inherit;

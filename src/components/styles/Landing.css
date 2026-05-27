@@ -300,33 +300,30 @@ h2.landing-info-h2 {
     font-size: 55px;
   }
 }
-@media screen and (min-width: 1025px) {
-  .character-model {
-    height: 100vh;
-    bottom: 0;
-    z-index: 11;
-    position: fixed;
-  }
-  .character-model::after,
-  .character-model::before {
-    display: none;
-  }
-  .landing-intro {
-    top: 50%;
-    left: auto;
-    right: 66%;
-    transform: translate(0%, -50%);
-  }
-
-  .landing-info {
-    bottom: auto;
-    top: 51%;
-    z-index: inherit;
-    text-align: left;
-    transform: translate(0%, -50%);
-    right: auto;
-    left: 66%;
-  }
+.character-model {
+  height: 100vh;
+  bottom: 0;
+  z-index: 11;
+  position: fixed;
+}
+.character-model::after,
+.character-model::before {
+  display: none;
+}
+.landing-intro {
+  top: 50%;
+  left: auto;
+  right: 66%;
+  transform: translate(0%, -50%);
+}
+.landing-info {
+  bottom: auto;
+  top: 51%;
+  z-index: inherit;
+  text-align: left;
+  transform: translate(0%, -50%);
+  right: auto;
+  left: 66%;
 }
 @media screen and (min-width: 1200px) {
   .landing-intro {
