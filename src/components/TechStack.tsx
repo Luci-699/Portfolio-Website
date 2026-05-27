@@ -30,7 +30,7 @@ const allImageUrls = [
 
 // Use fewer balls on mobile to reduce physics + render workload
 const isMobileDevice = window.innerWidth < 1025;
-const imageUrls = isMobileDevice ? allImageUrls.slice(0, 6) : allImageUrls;
+const imageUrls = isMobileDevice ? allImageUrls.slice(0, 4) : allImageUrls;
 
 const textures = imageUrls.map((url) => textureLoader.load(url));
 
