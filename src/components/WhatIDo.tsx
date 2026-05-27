@@ -58,6 +58,8 @@ const WhatIDo = () => {
               />
             </svg>
           </div>
+
+          {/* AI / ML */}
           <div
             className="what-content what-noTouch"
             ref={(el) => setRef(el, 0)}
@@ -85,30 +87,31 @@ const WhatIDo = () => {
               </svg>
             </div>
             <div className="what-corner"></div>
-
             <div className="what-content-in">
-              <h3>DEVELOP</h3>
-              <h4>Description</h4>
+              <h3>AI / ML</h3>
+              <h4>Intelligent Systems</h4>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas
-                quia aliquid laboriosam ducimus sit molestiae.
+                Building AI-powered applications using deep learning and
+                computer vision — from real-time sign language translators to
+                neural architectures. Focused on solving real human problems
+                with intelligent, data-driven systems.
               </p>
               <h5>Skillset & tools</h5>
               <div className="what-content-flex">
-                <div className="what-tags">JavaScript</div>
-                <div className="what-tags">TypeScript</div>
-                <div className="what-tags">Three.js</div>
-                <div className="what-tags">React</div>
-                <div className="what-tags">Css</div>
-                <div className="what-tags">Node.js</div>
-                <div className="what-tags">Next.js</div>
-                <div className="what-tags">Express.js</div>
-                <div className="what-tags">PHP</div>
-                <div className="what-tags">MySql</div>
+                <div className="what-tags">Python</div>
+                <div className="what-tags">TensorFlow</div>
+                <div className="what-tags">OpenCV</div>
+                <div className="what-tags">MediaPipe</div>
+                <div className="what-tags">SciKit-Learn</div>
+                <div className="what-tags">NumPy</div>
+                <div className="what-tags">LangChain</div>
+                <div className="what-tags">Matplotlib</div>
               </div>
               <div className="what-arrow"></div>
             </div>
           </div>
+
+          {/* Cybersecurity */}
           <div
             className="what-content what-noTouch"
             ref={(el) => setRef(el, 1)}
@@ -128,26 +131,29 @@ const WhatIDo = () => {
             </div>
             <div className="what-corner"></div>
             <div className="what-content-in">
-              <h3>DESIGN</h3>
-              <h4>Description</h4>
+              <h3>SECURE</h3>
+              <h4>Cybersecurity</h4>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas
-                quia aliquid laboriosam ducimus sit molestiae
+                Designing and building security-focused systems — including a
+                full SIEM platform for insider threat detection. Experienced in
+                CTF challenges, hackathons, and hands-on security tooling with
+                Kali Linux.
               </p>
               <h5>Skillset & tools</h5>
               <div className="what-content-flex">
-                <div className="what-tags">Blender</div>
-                <div className="what-tags">Zbrush</div>
-                <div className="what-tags">UI Design</div>
-                <div className="what-tags">Motion</div>
-                <div className="what-tags">Rigging</div>
-                <div className="what-tags">3D Animation</div>
-                <div className="what-tags">Character Design</div>
-                <div className="what-tags">Modelling</div>
+                <div className="what-tags">Kali Linux</div>
+                <div className="what-tags">SIEM</div>
+                <div className="what-tags">CTF</div>
+                <div className="what-tags">Linux</div>
+                <div className="what-tags">Python</div>
+                <div className="what-tags">Watchdog</div>
+                <div className="what-tags">RBAC</div>
+                <div className="what-tags">Git</div>
               </div>
               <div className="what-arrow"></div>
             </div>
           </div>
+
         </div>
       </div>
     </div>

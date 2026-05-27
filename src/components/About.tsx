@@ -6,9 +6,21 @@ const About = () => {
       <div className="about-me">
         <h3 className="title">About Me</h3>
         <p className="para">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quis
-          dolores numquam iusto Ratione earum ducimus autem id iure pariatur
-          dolorum quae maiores.
+          I'm Mohammed Faizan, a Computer Science (AI & ML) student at PES
+          University passionate about building intelligent and secure digital
+          systems. My interests lie at the intersection of Cybersecurity,
+          Artificial Intelligence, and Software Engineering, where I develop
+          practical solutions ranging from security monitoring platforms to
+          AI-powered accessibility tools.
+          <br /><br />
+          Beyond engineering, I actively lead and collaborate through AIESEC,
+          hackathons, and university initiatives. As the Student Coordinator for
+          the AI & ML Department, I work closely with students, faculty, and
+          industry stakeholders to drive impactful initiatives. I enjoy
+          mentoring students, managing partnerships, and working with diverse
+          teams. I believe impactful technology is built through a blend of
+          technical excellence, ownership, leadership, and effective
+          communication.
         </p>
       </div>
     </div>
