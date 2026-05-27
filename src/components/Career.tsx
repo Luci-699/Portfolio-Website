@@ -52,7 +52,7 @@ const Career = () => {
           <div className="career-info-box">
             <div className="career-info-in">
               <div className="career-role">
-                <h4>Head of Volunteers & Student Coordinator</h4>
+                <h4>Head of Volunteers &amp; Student Coordinator</h4>
                 <h5>AI 360° — India AI Impact Summit 2026, PES University</h5>
               </div>
               <h3>2026</h3>
@@ -62,6 +62,40 @@ const Career = () => {
               Pre-Summit event, ensuring seamless execution. Supported design,
               marketing, finance, and cross-functional event planning
               initiatives.
+            </p>
+          </div>
+
+          {/* Student Coordinator AIML */}
+          <div className="career-info-box">
+            <div className="career-info-in">
+              <div className="career-role">
+                <h4>Student Coordinator — AI &amp; ML Department</h4>
+                <h5>PES University</h5>
+              </div>
+              <h3>2025–26</h3>
+            </div>
+            <p>
+              Serve as the official student representative for the AI &amp; ML
+              Department, bridging students, faculty, and industry stakeholders.
+              Drive departmental initiatives, coordinate academic events, and
+              champion student welfare and engagement within the department.
+            </p>
+          </div>
+
+          {/* 7 Clubs */}
+          <div className="career-info-box">
+            <div className="career-info-in">
+              <div className="career-role">
+                <h4>Active Member — 7 University Clubs</h4>
+                <h5>PES University</h5>
+              </div>
+              <h3>2024–26</h3>
+            </div>
+            <p>
+              Actively engaged across 7 university clubs spanning technology,
+              leadership, social impact, and creative domains. Contributing to
+              events, workshops, and collaborative initiatives that build
+              community, develop skills, and create meaningful impact on campus.
             </p>
           </div>
         </div>
