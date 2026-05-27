@@ -300,33 +300,23 @@ h2.landing-info-h2 {
     font-size: 55px;
   }
 }
-/* Desktop: character is fixed and floats over all sections */
-@media screen and (min-width: 1025px) {
+/* Character: fixed on ALL screens, behind text on mobile */
+.character-model {
+  height: 100vh;
+  bottom: 0;
+  position: fixed;
+  opacity: 1;
+  z-index: 11;
+}
+.character-model::after,
+.character-model::before {
+  display: none;
+}
+/* Mobile: push behind text content */
+@media screen and (max-width: 1024px) {
   .character-model {
-    height: 100vh;
-    bottom: 0;
-    z-index: 11;
-    position: fixed;
-    opacity: 1;
-  }
-  .character-model::after,
-  .character-model::before {
-    display: none;
-  }
-  .landing-intro {
-    top: 50%;
-    left: auto;
-    right: 66%;
-    transform: translate(0%, -50%);
-  }
-  .landing-info {
-    bottom: auto;
-    top: 51%;
-    z-index: inherit;
-    text-align: left;
-    transform: translate(0%, -50%);
-    right: auto;
-    left: 66%;
+    z-index: 1;
+    opacity: 0.5;
   }
 }
 @media screen and (min-width: 1200px) {

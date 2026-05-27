@@ -36,12 +36,12 @@ const MainContainer = ({ children }: PropsWithChildren) => {
       <Cursor />
       <Navbar />
       <SocialIcons />
-      {/* 3D character — desktop only (too heavy for mobile) */}
-      {isDesktop && children}
+      {/* 3D character — fixed behind all content on all screens */}
+      {children}
       <div id="smooth-wrapper">
         <div id="smooth-content">
           <div className="container-main">
-            <Landing>{!isDesktop && children}</Landing>
+            <Landing />
             <About />
             <WhatIDo />
             <Career />

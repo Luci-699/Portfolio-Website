@@ -3,10 +3,6 @@ import "./styles/About.css";
 const About = () => {
   return (
     <div className="about-section" id="about">
-      {/* Mobile-only character image */}
-      <div className="about-char-mobile">
-        <img src="/images/character_hoodie.png" alt="character" />
-      </div>
       <div className="about-me">
         <h3 className="title">About Me</h3>
         <p className="para">
