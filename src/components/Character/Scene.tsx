@@ -34,7 +34,9 @@ const Scene = () => {
         powerPreference: isMobile ? "low-power" : "high-performance",
       });
       renderer.setSize(container.width, container.height);
-      renderer.setPixelRatio(Math.min(window.devicePixelRatio, isMobile ? 1.5 : 2));
+      // Mobile: pixel ratio 1.0 — cuts GPU pixels by ~55% vs 3x screens
+      renderer.setPixelRatio(isMobile ? 1.0 : Math.min(window.devicePixelRatio, 2));
+      renderer.shadowMap.enabled = !isMobile;
       renderer.toneMapping = THREE.ACESFilmicToneMapping;
       renderer.toneMappingExposure = 1;
       canvasDiv.current.appendChild(renderer.domElement);
@@ -108,8 +110,13 @@ const Scene = () => {
         landingDiv.addEventListener("touchstart", onTouchStart);
         landingDiv.addEventListener("touchend", onTouchEnd);
       }
-      const animate = () => {
+      // Mobile: 30fps cap halves GPU render calls vs 60fps
+      let lastFrameTime = 0;
+      const fpsInterval = isMobile ? 1000 / 30 : 0;
+      const animate = (time: number) => {
         requestAnimationFrame(animate);
+        if (isMobile && time - lastFrameTime < fpsInterval) return;
+        lastFrameTime = time;
         if (headBone) {
           handleHeadRotation(
             headBone,

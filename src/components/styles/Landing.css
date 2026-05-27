@@ -316,7 +316,7 @@ h2.landing-info-h2 {
 @media screen and (max-width: 1024px) {
   .character-model {
     z-index: 1;
-    opacity: 0.5;
+    opacity: 0.35;
   }
 }
 @media screen and (min-width: 1200px) {
