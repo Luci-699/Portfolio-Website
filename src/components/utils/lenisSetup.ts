@@ -9,10 +9,12 @@ let lenisInstance: Lenis | null = null;
 export function initLenis() {
   if (lenisInstance) return lenisInstance;
 
+  const isMobile = window.innerWidth < 1025;
+
   lenisInstance = new Lenis({
-    duration: 1.2,
+    duration: isMobile ? 0.8 : 1.2,
     easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-    touchMultiplier: 2.0,
+    touchMultiplier: isMobile ? 1.5 : 2.0,
     infinite: false,
   });
 

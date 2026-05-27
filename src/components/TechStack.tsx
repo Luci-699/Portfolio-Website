@@ -13,23 +13,24 @@ import {
 
 const textureLoader = new THREE.TextureLoader();
 
-const imageUrls = [
-  // Languages
+const allImageUrls = [
   "/images/python.png",
   "/images/typescript.webp",
   "/images/javascript.webp",
   "/images/java.png",
-  // Frontend & Backend
   "/images/react2.webp",
   "/images/node2.webp",
   "/images/mongo.webp",
-  // AI / ML & Tools
   "/images/tensorflow.png",
   "/images/docker.png",
   "/images/git.png",
   "/images/mysql.webp",
   "/images/express.webp",
 ];
+
+// Use fewer balls on mobile to reduce physics + render workload
+const isMobileDevice = window.innerWidth < 1025;
+const imageUrls = isMobileDevice ? allImageUrls.slice(0, 6) : allImageUrls;
 
 const textures = imageUrls.map((url) => textureLoader.load(url));
 
