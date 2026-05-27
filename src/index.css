@@ -33,15 +33,9 @@ h5,
 h6 {
   font-family: "Geist", sans-serif;
 }
-/* Desktop: GSAP controls scroll; Mobile: native scroll */
+/* Lenis handles all scroll (wheel + touch) — body stays overflow:hidden */
 body {
   overflow: hidden;
-}
-@media screen and (max-width: 1024px) {
-  body {
-    overflow-y: auto;
-    overflow-x: hidden;
-  }
 }
 a {
   color: inherit;
