@@ -8,6 +8,35 @@
   height: auto;
   width: var(--cWidth);
   margin: auto;
+  overflow: hidden;
+}
+/* Mobile character image — hidden on desktop where 3D model handles this */
+.about-char-mobile {
+  display: none;
+}
+@media only screen and (max-width: 1024px) {
+  .about-char-mobile {
+    display: block;
+    position: absolute;
+    right: -10%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 55%;
+    max-width: 320px;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .about-char-mobile img {
+    width: 100%;
+    opacity: 0.18;
+    filter: blur(1px) saturate(1.5);
+    mask-image: linear-gradient(to left, rgba(0,0,0,0.8) 0%, transparent 80%);
+    -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,0.8) 0%, transparent 80%);
+  }
+  .about-me {
+    position: relative;
+    z-index: 1;
+  }
 }
 .about-me {
   padding: 50px 0px;

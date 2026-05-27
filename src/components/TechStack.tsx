@@ -141,7 +141,7 @@ const TechStack = () => {
     if (!techEl) return;
     const observer = new IntersectionObserver(
       ([entry]) => setIsActive(entry.isIntersecting),
-      { threshold: 0.3 }
+      { threshold: 0.05 }
     );
     observer.observe(techEl);
     return () => observer.disconnect();
