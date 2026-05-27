@@ -125,9 +125,9 @@ export function setAllTimeline() {
   const careerTimeline = gsap.timeline({
     scrollTrigger: {
       trigger: ".career-section",
-      start: "top 30%",
-      end: "100% center",
-      scrub: true,
+      start: "top 60%",
+      end: "bottom 20%",
+      toggleActions: "play none none none",
       invalidateOnRefresh: true,
     },
   });
@@ -147,8 +147,8 @@ export function setAllTimeline() {
     )
     .fromTo(
       ".career-info-box",
-      { opacity: 0 },
-      { opacity: 1, stagger: 0.05, duration: 0.5 },
+      { opacity: 0, y: 20 },
+      { opacity: 1, y: 0, stagger: 0.08, duration: 0.6, ease: "power2.out" },
       0
     )
     .fromTo(
