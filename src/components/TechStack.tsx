@@ -12,16 +12,25 @@ import {
 } from "@react-three/rapier";
 
 const textureLoader = new THREE.TextureLoader();
+
 const imageUrls = [
-  "/images/react2.webp",
-  "/images/next2.webp",
-  "/images/node2.webp",
-  "/images/mongo.webp",
+  // Languages
+  "/images/python.png",
   "/images/typescript.webp",
   "/images/javascript.webp",
-  "/images/express.webp",
+  "/images/java.png",
+  // Frontend & Backend
+  "/images/react2.webp",
+  "/images/node2.webp",
+  "/images/mongo.webp",
+  // AI / ML & Tools
+  "/images/tensorflow.png",
+  "/images/docker.png",
+  "/images/git.png",
   "/images/mysql.webp",
+  "/images/express.webp",
 ];
+
 const textures = imageUrls.map((url) => textureLoader.load(url));
 
 const sphereGeometry = new THREE.SphereGeometry(1, 28, 28);
@@ -128,28 +137,14 @@ const TechStack = () => {
   const [isActive, setIsActive] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY || document.documentElement.scrollTop;
-      const threshold = document
-        .getElementById("work")!
-        .getBoundingClientRect().top;
-      setIsActive(scrollY > threshold);
-    };
-    document.querySelectorAll(".header a").forEach((elem) => {
-      const element = elem as HTMLAnchorElement;
-      element.addEventListener("click", () => {
-        const interval = setInterval(() => {
-          handleScroll();
-        }, 10);
-        setTimeout(() => {
-          clearInterval(interval);
-        }, 1000);
-      });
-    });
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    const techEl = document.querySelector(".techstack");
+    if (!techEl) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => setIsActive(entry.isIntersecting),
+      { threshold: 0.3 }
+    );
+    observer.observe(techEl);
+    return () => observer.disconnect();
   }, []);
   const materials = useMemo(() => {
     return textures.map(

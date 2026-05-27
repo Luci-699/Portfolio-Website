@@ -28,13 +28,59 @@ const setCharacter = (
           async (gltf) => {
             character = gltf.scene;
             await renderer.compileAsync(character, camera, scene);
+
+            // Recolor shirt & pants to black
             character.traverse((child: any) => {
               if (child.isMesh) {
                 const mesh = child as THREE.Mesh;
                 child.castShadow = true;
                 child.receiveShadow = true;
                 mesh.frustumCulled = true;
+
+                const name = child.name.toLowerCase();
+                const mat = mesh.material as THREE.MeshStandardMaterial;
+
+                // Detect shirt/top clothing meshes
+                const isShirt =
+                  name.includes("shirt") ||
+                  name.includes("top") ||
+                  name.includes("cloth") ||
+                  name.includes("tshirt") ||
+                  name.includes("body_cloth") ||
+                  name.includes("torso_cloth") ||
+                  name.includes("sweater") ||
+                  name.includes("jacket");
+
+                // Detect pants/bottom clothing meshes
+                const isPants =
+                  name.includes("pant") ||
+                  name.includes("trouser") ||
+                  name.includes("leg_cloth") ||
+                  name.includes("jean") ||
+                  name.includes("short");
+
+                if (isShirt) {
+                  // Matte black for shirt
+                  const newMat = mat.clone();
+                  newMat.color.set(0x0a0a0a);
+                  newMat.roughness = 0.85;
+                  newMat.metalness = 0.05;
+                  mesh.material = newMat;
+                } else if (isPants) {
+                  // Same matte black as shirt
+                  const newMat = mat.clone();
+                  newMat.color.set(0x0a0a0a);
+                  newMat.roughness = 0.85;
+                  newMat.metalness = 0.05;
+                  mesh.material = newMat;
+                }
               }
+            });
+
+            // Log all mesh names so we can fine-tune if needed
+            console.log("Character meshes:");
+            character.traverse((child: any) => {
+              if (child.isMesh) console.log(" ->", child.name);
             });
             resolve(gltf);
             setCharTimeline(character, camera);
