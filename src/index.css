@@ -119,6 +119,27 @@ body {
     --cWidth: 94%;
   }
 }
+@media screen and (max-width: 1024px) {
+  /* All sections must sit above the fixed character (z-index:1) */
+  .career-section,
+  .work-section,
+  .techstack,
+  .contact-section,
+  .whatIDO {
+    position: relative;
+    z-index: 5;
+  }
+  /* Landing text needs to be above character too */
+  .landing-intro,
+  .landing-info {
+    z-index: 5;
+  }
+  /* Frosted backdrop on landing name so it's always readable */
+  .landing-intro h1,
+  .landing-intro h2 {
+    text-shadow: 0 0 20px rgba(0,0,0,0.9), 0 2px 8px rgba(0,0,0,0.8);
+  }
+}
 @media screen and (max-width: 900px) {
   .techstack h2 {
     font-size: 40px;

@@ -312,6 +312,13 @@ h2.landing-info-h2 {
 .character-model::before {
   display: none;
 }
+/* Mobile: push character behind all text content */
+@media screen and (max-width: 1024px) {
+  .character-model {
+    z-index: 1;
+    opacity: 0.45;
+  }
+}
 /* Mobile: text at top and bottom, clear of the centered character */
 .landing-intro {
   top: 12%;
