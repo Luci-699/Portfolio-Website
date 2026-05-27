@@ -113,7 +113,7 @@ const Scene = () => {
       // Mobile: 30fps cap halves GPU render calls vs 60fps
       let lastFrameTime = 0;
       const fpsInterval = isMobile ? 1000 / 30 : 0;
-      const animate = (time: number) => {
+      const animate = (time: number = 0) => {
         requestAnimationFrame(animate);
         if (isMobile && time - lastFrameTime < fpsInterval) return;
         lastFrameTime = time;
