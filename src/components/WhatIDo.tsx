@@ -26,6 +26,10 @@ const WhatIDo = () => {
   }, []);
   return (
     <div className="whatIDO">
+      {/* Mobile-only character image */}
+      <div className="whatido-char-mobile">
+        <img src="/images/character_hoodie.png" alt="character" />
+      </div>
       <div className="what-box">
         <h2 className="title">
           W<span className="hat-h2">HAT </span>

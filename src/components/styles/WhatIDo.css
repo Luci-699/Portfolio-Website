@@ -11,6 +11,31 @@
   margin: auto;
   z-index: 9;
 }
+
+/* Mobile character image — hidden on desktop (3D model handles it) */
+.whatido-char-mobile {
+  display: none;
+}
+@media only screen and (max-width: 1024px) {
+  .whatido-char-mobile {
+    display: block;
+    position: absolute;
+    right: -5%;
+    bottom: 0;
+    width: 50%;
+    max-width: 260px;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .whatido-char-mobile img {
+    width: 100%;
+    height: auto;
+    opacity: 0.25;
+    filter: saturate(1.3);
+    mask-image: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.3) 70%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.3) 70%, transparent 100%);
+  }
+}
 .what-box {
   width: 50%;
   display: flex;
