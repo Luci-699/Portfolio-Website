@@ -300,43 +300,19 @@ h2.landing-info-h2 {
     font-size: 55px;
   }
 }
-/* Character is always fixed — Lenis handles mobile touch scroll */
-.character-model {
-  height: 100vh;
-  bottom: 0;
-  z-index: 11;
-  position: fixed;
-  opacity: 1;
-}
-.character-model::after,
-.character-model::before {
-  display: none;
-}
-/* Mobile: push character behind all text content */
-@media screen and (max-width: 1024px) {
-  .character-model {
-    z-index: 1;
-    opacity: 0.45;
-  }
-}
-/* Mobile: text at top and bottom, clear of the centered character */
-.landing-intro {
-  top: 12%;
-  left: 0;
-  right: auto;
-  transform: none;
-}
-.landing-info {
-  bottom: 40px;
-  top: auto;
-  right: 50%;
-  transform: translateX(50%);
-  text-align: center;
-  left: auto;
-  z-index: 9;
-}
-/* Desktop: text splits left/right around the character */
+/* Desktop: character is fixed and floats over all sections */
 @media screen and (min-width: 1025px) {
+  .character-model {
+    height: 100vh;
+    bottom: 0;
+    z-index: 11;
+    position: fixed;
+    opacity: 1;
+  }
+  .character-model::after,
+  .character-model::before {
+    display: none;
+  }
   .landing-intro {
     top: 50%;
     left: auto;

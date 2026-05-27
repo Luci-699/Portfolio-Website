@@ -33,9 +33,26 @@ h5,
 h6 {
   font-family: "Geist", sans-serif;
 }
-/* Lenis handles all scroll (wheel + touch) — body stays overflow:hidden */
+/* Lenis handles desktop scroll; mobile uses native hardware-accelerated scroll */
 body {
   overflow: hidden;
+}
+@media screen and (max-width: 1024px) {
+  body {
+    overflow-y: auto;
+    overflow-x: hidden;
+    scroll-snap-type: y mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+  /* Each major section snaps into place */
+  .landing-section,
+  .about-section,
+  .whatIDO,
+  .career-section,
+  .work-section,
+  .contact-section {
+    scroll-snap-align: start;
+  }
 }
 a {
   color: inherit;
@@ -123,18 +140,15 @@ body {
   /* All sections must sit above the fixed character (z-index:1) */
   .career-section,
   .work-section,
-  .techstack,
   .contact-section,
   .whatIDO {
     position: relative;
     z-index: 5;
   }
-  /* Landing text needs to be above character too */
   .landing-intro,
   .landing-info {
     z-index: 5;
   }
-  /* Frosted backdrop on landing name so it's always readable */
   .landing-intro h1,
   .landing-intro h2 {
     text-shadow: 0 0 20px rgba(0,0,0,0.9), 0 2px 8px rgba(0,0,0,0.8);
