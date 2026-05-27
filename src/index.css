@@ -33,8 +33,11 @@ h5,
 h6 {
   font-family: "Geist", sans-serif;
 }
-body {
-  overflow: hidden;
+/* Allow native scroll on mobile; overflow is locked on desktop via GSAP */
+@media screen and (min-width: 1025px) {
+  body {
+    overflow: hidden;
+  }
 }
 a {
   color: inherit;
@@ -121,5 +124,20 @@ body {
 @media screen and (max-width: 900px) {
   .techstack h2 {
     font-size: 40px;
+    top: 60px;
+  }
+  .techstack {
+    height: 70vh;
+    margin-top: 0;
+    margin-bottom: -50px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .techstack h2 {
+    font-size: 28px;
+    top: 40px;
+  }
+  .techstack {
+    height: 60vh;
   }
 }

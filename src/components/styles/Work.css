@@ -203,10 +203,43 @@
 }
 @media only screen and (max-width: 600px) {
   .work-section h2 {
-    font-size: 36px;
+    font-size: 32px;
   }
   .work-header {
     flex-direction: column;
     align-items: flex-start;
+    gap: 16px;
+  }
+  .work-nav-btn {
+    width: 44px;
+    height: 44px;
+    font-size: 18px;
+  }
+  .work-box {
+    padding: 28px 0;
+    gap: 20px;
+  }
+  .work-title h3 {
+    font-size: 40px;
+    line-height: 40px;
+  }
+  .work-title > div h4 {
+    font-size: 17px;
+  }
+  .work-info h4 {
+    font-size: 14px;
+  }
+  .work-image img {
+    max-height: 200px;
+    border-radius: 8px;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .work-section h2 {
+    font-size: 26px;
+  }
+  .work-title h3 {
+    font-size: 32px;
+    line-height: 32px;
   }
 }

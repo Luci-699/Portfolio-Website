@@ -103,6 +103,25 @@ const Work = () => {
     return () => window.removeEventListener("keydown", handleKey);
   }, [current]);
 
+  // Touch swipe support for mobile
+  useEffect(() => {
+    const el = document.querySelector(".work-slide-wrapper") as HTMLElement;
+    if (!el) return;
+    let startX = 0;
+    const onTouchStart = (e: TouchEvent) => { startX = e.touches[0].clientX; };
+    const onTouchEnd = (e: TouchEvent) => {
+      const diff = e.changedTouches[0].clientX - startX;
+      if (diff < -50) next();
+      else if (diff > 50) prev();
+    };
+    el.addEventListener("touchstart", onTouchStart, { passive: true });
+    el.addEventListener("touchend", onTouchEnd, { passive: true });
+    return () => {
+      el.removeEventListener("touchstart", onTouchStart);
+      el.removeEventListener("touchend", onTouchEnd);
+    };
+  }, [current]);
+
   const project = projects[current];
 
   return (
